@@ -1,4 +1,4 @@
-# k8s-websrv-danny.custom-message.yaml
+# k8s-nginx-demo-danny--depl_v2.yaml
 
 apiVersion: apps/v1
 kind: Deployment
