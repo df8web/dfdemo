@@ -1,0 +1,38 @@
+# k8s-websrv-danny.custom-message.yaml
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-nginx-danny
+spec:
+  selector:
+    app: k8s-nginx-danny
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-nginx-danny
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-nginx-danny
+  template:
+    metadata:
+      labels:
+        app: k8s-nginx-danny
+    spec:
+      containers:
+      - name: k8s-websrv-danny
+        image: dfdemo/hello-nginx:1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MESSAGE
+          value: Danny just deployed this on K8s!!
+

@@ -1,0 +1,25 @@
+# k8s-websrv-danny.custom-message.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-nginx-danny
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-nginx-danny
+  template:
+    metadata:
+      labels:
+        app: k8s-nginx-danny
+    spec:
+      containers:
+      - name: k8s-websrv-danny
+        image: dfdemo/hello-nginx:1.0
+        ports:
+        - containerPort: 8080
+        #env:
+        #- name: MESSAGE
+        #  value: Danny just deployed this Version1 on K8s!!
+

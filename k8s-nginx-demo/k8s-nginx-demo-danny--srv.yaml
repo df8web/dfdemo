@@ -1,0 +1,14 @@
+# k8s-websrv-danny.custom-message.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-nginx-danny
+spec:
+  selector:
+    app: k8s-nginx-danny
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer
+
