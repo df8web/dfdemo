@@ -17,6 +17,7 @@ spec:
       containers:
       - name: k8s-websrv-danny
         image: dfdemo/hello-nginx:1.0
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
         #env:

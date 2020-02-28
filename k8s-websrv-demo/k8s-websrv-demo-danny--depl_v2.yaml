@@ -17,6 +17,7 @@ spec:
       containers:
       - name: k8s-websrv-danny
         image: dfdemo/hello-kubernetes:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
         env:
