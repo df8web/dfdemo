@@ -7,7 +7,8 @@ metadata:
     traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
 spec:
   rules:
-  - http:
+  - host: traefik.example.com 
+    http:
       paths:
       - path: /wai
         backend:
